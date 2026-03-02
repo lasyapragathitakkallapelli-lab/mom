@@ -20,4 +20,4 @@ for image_name in ["1.jpg", "2.jpg"]:
     )
 
 st.set_page_config(page_title="Happy Birthday Mom!", layout="centered")
-components.html(html_content, height=1000, scrolling=True)True)
+components.html(html_content, height=1000, scrolling=True)
