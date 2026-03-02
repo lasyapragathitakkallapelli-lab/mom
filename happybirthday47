@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Physics mam!</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        background: linear-gradient(to right, #FFDEE9, #B5FFFC);
+        color: #333;
+        padding: 50px;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+        color: #FF69B4;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+        font-size: 24px;
+        margin-bottom: 30px;
+        animation: fadeIn 3s ease-in-out;
+    }
+
+    .poem {
+        font-size: 20px;
+        margin: 20px auto;
+        max-width: 600px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    img {
+        width: 250px;
+        height: auto;
+        margin: 15px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: transform 0.3s;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+    }
+
+    button {
+        background-color: #FF69B4;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        margin-top: 20px;
+    }
+
+    button:hover {
+        background-color: #FF1493;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background-color: #FF69B4;
+        top: -10px;
+        animation: fall 3s linear infinite;
+        opacity: 0.7;
+        border-radius: 50%;
+    }
+
+    @keyframes fall {
+        to { transform: translateY(100vh) rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+
+<h1>🎂 Happy Birthday Mom! 🎂</h1>
+
+<div class="poem">
+    <p>
+        The one who stays always, works hard for us, <br>
+        Who fills our lives with love, never makes a fuss, <br>
+        Who buys us a mockingbird to sing and play, <br>
+        Mom, you are our sunshine every day! 🌸
+    </p>
+</div>
+
+<!-- Pictures of Mom -->
+<img src="1.jpg" alt="Mom Picture 1">
+<img src="2.jpg" alt="Mom Picture 2">
+
+<div>
+    <button onclick="showSurprise()">Click for a Surprise!</button>
+</div>
+
+<p id="message" style="font-size: 22px; margin-top: 20px;"></p>
+
+<script>
+    // Confetti animation
+    function createConfetti() {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+        confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
+    }
+
+    setInterval(createConfetti, 200);
+
+    // Surprise messages
+   function showSurprise() {
+    const poemLines = [
+        "The one who wakes before the sun,",
+        "To make our world feel bright and fun.",
+        "With gentle hands and endless care,",
+        "She lifts our hearts from every despair.",
+        "The one who listens, the one who knows,",
+        "Through every storm, through highs and lows.",
+        "She works so hard, yet gives with grace,",
+        "A loving smile lights up her face.",
+        "She fills our days with laughter and song,",
+        "Guides our steps and keeps us strong.",
+        "With little joys and thoughtful deeds,",
+        "She plants in us the finest seeds.",
+        "Mom, you’re our anchor, our guiding star,",
+        "Our home, our heart, just as you are.",
+        "Happy Birthday, with love that won’t part,",
+        "Forever you’re cherished, always in our heart. 💖"
+    ];
+
+    const messageElement = document.getElementById('message');
+    messageElement.innerText = ""; // clear previous text
+    let i = 0;
+
+    function showLine() {
+        if (i < poemLines.length) {
+            messageElement.innerText += poemLines[i] + "\n";
+            i++;
+            setTimeout(showLine, 1000); // 1 second delay between lines
+        }
+    }
+
+    showLine();
+}
+</script>
+
+</body>
+</html>
