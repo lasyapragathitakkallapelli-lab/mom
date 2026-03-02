@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 st.set_page_config(page_title="Happy Birthday Mom!", layout="centered")
 
 # Load your HTML file
-with open("index.html", "r", encoding="utf-8") as f:
+with open("happybirthday47.html", "r", encoding="utf-8") as f:
     html_content = f.read()
 
 # Render the HTML
